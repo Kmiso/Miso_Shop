@@ -16,11 +16,11 @@ public class CartItem {
     private Long id;
 
     // 하나의 장바구니에는 여러개의 상품을 담을 수 있으므로 1:N
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
 
