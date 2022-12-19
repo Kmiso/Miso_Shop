@@ -4,7 +4,7 @@ import com.shop.shop.constant.ItemSellStatus;
 import com.shop.shop.dto.ItemFormDto;
 import com.shop.shop.entity.Item;
 import com.shop.shop.entity.ItemImg;
-import com.shop.shop.repository.ItemImgRepositroy;
+import com.shop.shop.repository.ItemImgRepository;
 import com.shop.shop.repository.ItemRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ class ItemServiceTest {
     @Autowired
     ItemRepository itemRepository;
     @Autowired
-    ItemImgRepositroy itemImgRepositroy;
+    ItemImgRepository itemImgRepository;
 
     List<MultipartFile> createMultipartFiles() throws Exception {
        List<MultipartFile> multipartFileList = new ArrayList<>();
@@ -60,7 +60,7 @@ class ItemServiceTest {
         List<MultipartFile> multipartFileList = createMultipartFiles();
         Long itemId = itemService.saveItem(itemFormDto, multipartFileList);
 
-        List<ItemImg> itemImgList = itemImgRepositroy.findByItemIdOrderByIdAAsc(itemId);
+        List<ItemImg> itemImgList = itemImgRepository.findByItemIdOrderByIdAsc(itemId);
         Item item = itemRepository.findById(itemId).orElseThrow(EntityNotFoundException::new);
 
         assertEquals(itemFormDto.getItemNm(), item.getItemNm());

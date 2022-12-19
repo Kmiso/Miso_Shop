@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @Getter
 @Setter
-public class BaseTimeEntity {
+public abstract class BaseTimeEntity {
     @CreatedDate // 엔티티가 생성되어 저장될 때 시간을 자동으로 저장
     @Column(updatable = false)
     private LocalDateTime regTime;

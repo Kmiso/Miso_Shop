@@ -18,7 +18,6 @@ public class ItemImgDto {
 
     private String repImgYn;
 
-    // 멤버 변수로 ModelMapper 객체 추가
     private static ModelMapper modelMapper = new ModelMapper();
 
     public static ItemImgDto of(ItemImg itemImg) {

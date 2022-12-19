@@ -1,7 +1,7 @@
 package com.shop.shop.service;
 
 import com.shop.shop.entity.ItemImg;
-import com.shop.shop.repository.ItemImgRepositroy;
+import com.shop.shop.repository.ItemImgRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class ItemImgService {
     @Value("${itemImgLocation}")
     private String itemImgLocation;
 
-    private final ItemImgRepositroy itemImgRepositroy;
+    private final ItemImgRepository itemImgRepository;
 
     private final FileService fileService;
 
@@ -33,6 +33,6 @@ public class ItemImgService {
 
         // 상품 이미지 정보 저장
         itemImg.updateItemImg(oriImgName, imgName, imgUrl);
-        itemImgRepositroy.save(itemImg);
+        itemImgRepository.save(itemImg);
     }
 }
