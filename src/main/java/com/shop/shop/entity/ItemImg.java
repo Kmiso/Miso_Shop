@@ -15,7 +15,7 @@ public class ItemImg extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String imgName; //이미지 파일명
+    private String imgName; // 이미지 파일명
 
     private String oriImgName; // 원본 이미지 파일명
 
@@ -27,9 +27,11 @@ public class ItemImg extends BaseEntity {
     @JoinColumn(name = "item_id")
     private Item item;
 
-    public void updateItemImg(String oriImgName, String imgName, String imgUrl) {
+    public void updateItemImg(String oriImgName,
+                              String imgName,
+                              String imgUrl) {
         this.oriImgName = oriImgName;
         this.imgName = imgName;
         this.imgUrl = imgUrl;
     }
-}
+    }

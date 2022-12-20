@@ -5,7 +5,6 @@ import com.shop.shop.repository.ItemRepository;
 import com.shop.shop.repository.MemberRepository;
 import com.shop.shop.repository.OrderItemRepository;
 import com.shop.shop.repository.OrderRepository;
-import org.aspectj.weaver.ast.Or;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import javax.persistence.PersistenceContext;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @Transactional

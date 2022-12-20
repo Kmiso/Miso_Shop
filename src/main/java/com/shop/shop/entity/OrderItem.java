@@ -19,11 +19,15 @@ public class OrderItem extends BaseEntity {
     @JoinColumn(name = "item_id")
     private Item item;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
 
     private int orderPrice; // 주문가격
 
     private int count; // 수량
+
+    private LocalDateTime regTime;
+
+    private LocalDateTime updateTime;
 }
