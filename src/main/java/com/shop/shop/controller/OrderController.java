@@ -29,11 +29,13 @@ public class OrderController {
             for(FieldError fieldError : fieldErrors) {
                 sb.append(fieldError.getDefaultMessage());
             }
+            // 에러 정보를 ResponseEntity 객체에 담아서 반환
             return new ResponseEntity<String>(sb.toString(), HttpStatus.BAD_REQUEST); 
         }
         String email = principal.getName();
         Long orderId;
         try {
+            // 화면으로부터 넘어오는 주문 정보와 회원의 이메일 정보를 이용하여 주문 로직 호출
             orderId = orderService.order(orderDto, email);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);

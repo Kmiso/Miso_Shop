@@ -35,7 +35,9 @@ public class OrderService {
         OrderItem orderItem = OrderItem.createOrderItem(item, orderDto.getCount());
         orderItemList.add(orderItem);
 
+        // 회원 정보와 주문할 상품 리스트 정보를 이용하여 주문 엔티티 생성
         Order order = Order.createOrder(member, orderItemList);
+        // 생성한 주문 엔티티 저장
         orderRepository.save(order);
 
         return order.getId();
